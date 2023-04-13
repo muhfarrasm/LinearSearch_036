@@ -22,9 +22,9 @@ void input() {
 	}
 
 	cout << endl;
-	cout << "\n================================================\n" << endl;
-	cout << "===========Entry Array Elements===============\n" << endl;
-	cout << "================================================\n" << endl;
+	cout << "\n------------------\n" << endl;
+	cout << "Entry Array Elements\n" << endl;
+	cout << "--------------------\n" << endl;
 
 	for ( i = 0; i < n; i++)
 	{
@@ -32,3 +32,36 @@ void input() {
 		cin >> arr[i];
 	}
 }
+
+void LinearSearch()
+{
+	char ch;
+	int comparison; // Number of comparison
+
+	do				//Langkah 3
+	{
+		//Accept the number to be searched
+		cout << "\nEnter the element you want to search : "; //Langkah 1
+		int item;
+		cin >> item;
+
+		comparison = 0;
+		for (i = 0; i < n; i++)								//Langkah 2 dan 4
+		{
+			comparison++;
+			if (arr[i] == item)								// Langkah 5a found
+			{
+				cout << "\n" << item << "found at position " << (i + 1) << endl;
+				break;
+			}
+		}
+		if (i == 0)
+			cout << "\n" << item << " not found in the array\n ";
+		cout << "\nNumber of comparasion: " << comparison << endl;
+
+		cout << "\nContinue search (y/n): ";
+		cin >> ch;
+	} while ((ch == 'y') || (ch == 'Y'));
+
+}
+
